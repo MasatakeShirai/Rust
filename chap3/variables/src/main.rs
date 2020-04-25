@@ -27,6 +27,15 @@ fn main() {
     let quotient = 56.7 / 32.2;
     let remainder = 43 % 5;
     println!("sum:{}, diffence:{}, product:{}, quotient:{}, remainder:{}"
-             ,sum ,diffence, product, quotient, remainder)
+             ,sum ,diffence, product, quotient, remainder);
 
+    //tuple type
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let(x,y,z) = tup;
+    println!("x:{}, y:{}, z:{}",x,y,z);
+
+    let five_hundred = tup.0;
+    let six_point_fout = tup.1;
+    let one = tup.2;
+    print!("{}, {}, {}",five_hundred, six_point_fout, one);
 }
