@@ -19,4 +19,14 @@ fn main() {
     let space = "     ";
     let space = space.len();
     println!("The lengrh of space is {}",space);
+
+    //Numerical calculation
+    let sum =  5 + 10;
+    let diffence = 95.5 - 4.3;
+    let product = 4 * 30;
+    let quotient = 56.7 / 32.2;
+    let remainder = 43 % 5;
+    println!("sum:{}, diffence:{}, product:{}, quotient:{}, remainder:{}"
+             ,sum ,diffence, product, quotient, remainder)
+
 }
