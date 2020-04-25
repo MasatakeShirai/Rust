@@ -14,4 +14,9 @@ fn main() {
     let y = y + 1;
     let y = y * 2;
     println!{"The value of y is {}",y}
+
+    //mut can't change type, but shadowing can change type
+    let space = "     ";
+    let space = space.len();
+    println!("The lengrh of space is {}",space);
 }
