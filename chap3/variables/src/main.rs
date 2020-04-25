@@ -29,7 +29,7 @@ fn main() {
     println!("sum:{}, diffence:{}, product:{}, quotient:{}, remainder:{}"
              ,sum ,diffence, product, quotient, remainder);
 
-    //tuple type
+    //tuple
     let tup: (i32, f64, u8) = (500, 6.4, 1);
     let(x,y,z) = tup;
     println!("x:{}, y:{}, z:{}",x,y,z);
@@ -37,5 +37,11 @@ fn main() {
     let five_hundred = tup.0;
     let six_point_fout = tup.1;
     let one = tup.2;
-    print!("{}, {}, {}",five_hundred, six_point_fout, one);
+    println!("{}, {}, {}",five_hundred, six_point_fout, one);
+
+    //array 
+    let a = [0,1,2,3,4,5];
+    let first = a[0];
+    let second = a[1];
+    println!("first:{}, second:{}",first,second);
 }
