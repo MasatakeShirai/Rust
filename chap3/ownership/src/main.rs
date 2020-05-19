@@ -12,4 +12,9 @@ fn main() {
     let s1 = String::from("Hay");
     let s2 = s1.clone();
     println!("{},{}",s1,s2);
+
+    //copy
+    let x = 7;
+    let y = x;
+    println!("x:{}, y:{}",x,y)
 }
