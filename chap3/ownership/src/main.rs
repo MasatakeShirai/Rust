@@ -16,5 +16,25 @@ fn main() {
     //copy
     let x = 7;
     let y = x;
-    println!("x:{}, y:{}",x,y)
+    println!("x:{}, y:{}",x,y);
+
+    //s gose into the scope
+    let s = String::from("GoodNight..");
+    //s moves to func
+    takes_ownership(s);
+
+    //x gose into the scope
+    let x = 5;
+    //x copise into func
+    makes_copy(x);
+    println!("{}",x)
+
+}
+
+fn takes_ownership(some_string: String){
+    println!("{}",some_string);
+}
+
+fn makes_copy(some_integer: i32){
+    println!("{}",some_integer);
 }
