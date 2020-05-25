@@ -14,6 +14,12 @@ fn main() {
 
     let user2 = buile_user(String::from("user2@ac.jp",), String::from("user2"));
     print_user(&user2);
+
+    let black = Color(0,0,0);
+    let origin = Point(0,0,0);
+
+    println!("black:({},{},{})",black.0,black.1,black.2);
+    println!("origin:({},{},{})",origin.0,origin.1,origin.2);
 }
 
 struct User{
@@ -22,6 +28,9 @@ struct User{
     sign_in_count: u64,
     active: bool,
 }
+
+struct Color(i32,i32,i32);
+struct Point(i32,i32,i32);
 
 fn print_user(user:&User){
     println!("-------------------");
