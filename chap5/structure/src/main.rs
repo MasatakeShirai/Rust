@@ -30,10 +30,10 @@ fn print_user(user:&User){
     println!("-------------------");
 }
 
-fn buile_user(email:String, name:String)->User{
+fn buile_user(email:String, username:String)->User{
     User{
-        email: email,
-        username: name,
+        email,
+        username,
         active: true,
         sign_in_count: 1,
     }
