@@ -1,8 +1,7 @@
 #[derive(Debug)]
 enum UsState{
     Alabama,
-    Alaska,
-    NY,
+    //etc...
 }
 
 enum Coin{
@@ -16,12 +15,21 @@ fn main() {
     let coin = Coin::Dime;
     println!("The coin is {}.",value_in_cents(coin));
 
+    let coin = Coin::Nickel;
+    println!("The coin is {}.",value_in_cents(coin));
+
     let coin = Coin::Penny;
     println!("The coin is {}.",value_in_cents(coin));
 
     let coin = Coin::Quater(UsState::Alabama);
     println!("The coin is {}.",value_in_cents(coin));
    
+    let some_u8_value = Some(3);
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }else{
+        println!("It is not three!")
+    }
 }
 
 fn value_in_cents(coin:Coin)->u32{
