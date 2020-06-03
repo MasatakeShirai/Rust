@@ -9,4 +9,12 @@ fn main() {
     println!("Third is {}.",third);
 
     let third: Option<&i32> = v.get(2);
+
+    for i in &mut v{
+        *i += 50;
+    }
+
+    for i in &v{
+        println!("{}",i);
+    }
 }
