@@ -6,16 +6,20 @@ enum SpreadSheetCell {
 
 fn main() {
     //Vector
-    let v:Vec<i32> = Vec::new();
+    let _v:Vec<i32> = Vec::new();
     let mut v = vec![1,2,3];
 
     v.push(4);
     v.push(5);
 
+    println!("{:?}",v);
+
     let third: &i32 = &v[2];
     println!("Third is {}.",third);
 
     let third: Option<&i32> = v.get(2);
+
+    println!("{:?}",third);
 
     for i in &mut v{
         *i += 50;
@@ -25,7 +29,7 @@ fn main() {
         println!("{}",i);
     }
 
-    let row = vec![
+    let _row = vec![
         SpreadSheetCell::Int(3),
         SpreadSheetCell::Float(3.14),
         SpreadSheetCell::Text(String::from("hello"))
@@ -73,7 +77,29 @@ fn main() {
     let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
     let score = scores.get(&String::from("Red"));
 
+    print!("{:?}",score);
+
     for (key, value) in &scores{
         println!("{},{}",key,value);
     }
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Blue"), 25);
+
+    println!("{:?}",scores);
+
+    scores.entry(String::from("Blue")).or_insert(50);
+    scores.entry(String::from("Green")).or_insert(50);
+    println!("{:?}",scores);
+
+    let text = "Hello world wonderful world";
+    let mut map = HashMap::new();
+    for i in text.split_whitespace(){
+        let count = map.entry(i).or_insert(0);
+        *count += 1;
+    }
+    println!("{:?}",map);
+
 }
