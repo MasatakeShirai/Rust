@@ -39,4 +39,24 @@ fn main() {
 
     let s = String::from("second string");
     println!("{}",s);
+
+    let mut s = String::from("foo");
+    let s1 = "bar";
+    s.push_str(s1);
+    println!("{}",s);
+    println!("{}",s1);
+
+    s.push('l');
+    println!("{}",s);
+
+    let s1 = String::from("Hello,");
+    let s2 = String::from("World!");
+    println!("{}",s1+&s2);
+
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    let s = format!("{}-{}-{}",s1,s2,s3);
+    println!("{}",s);        
+    
 }
