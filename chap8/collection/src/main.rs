@@ -30,4 +30,13 @@ fn main() {
         SpreadSheetCell::Float(3.14),
         SpreadSheetCell::Text(String::from("hello"))
     ];
+
+    //String
+    let data = "initial String";
+
+    let s = data.to_string();
+    println!("{}",s);
+
+    let s = String::from("second string");
+    println!("{}",s);
 }
