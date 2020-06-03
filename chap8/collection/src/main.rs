@@ -1,4 +1,11 @@
+enum SpreadSheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
 fn main() {
+    //Vector
     let v:Vec<i32> = Vec::new();
     let mut v = vec![1,2,3];
 
@@ -17,4 +24,10 @@ fn main() {
     for i in &v{
         println!("{}",i);
     }
+
+    let row = vec![
+        SpreadSheetCell::Int(3),
+        SpreadSheetCell::Float(3.14),
+        SpreadSheetCell::Text(String::from("hello"))
+    ];
 }
