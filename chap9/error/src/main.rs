@@ -1,4 +1,6 @@
 use std::fs::File;
+use std::io;
+use std::io::Read;
 use std::io::ErrorKind;
 
 fn main() {
@@ -26,5 +28,24 @@ fn main() {
     };
 
     //let _f = File::open("good.txt").unwrap();
-    let _f = File::open("good.txt").expect("Failed to open good.txt");
+    //let _f = File::open("good.txt").expect("Failed to open good.txt");
+
+    let f = read_username_from_file();
+    println!("{:?}",f);
+}
+
+fn read_username_from_file()-> Result<String, io::Error>{
+    let f = File::open("good.txt");
+
+    let mut f = match f {
+        Ok(file) => file,
+        Err(e) => return Err(e),
+    };
+
+    let mut s = String::new();
+
+    match f.read_to_string(&mut s){
+        Ok(_) => Ok(s),
+        Err(e) => Err(e),
+    }
 }
