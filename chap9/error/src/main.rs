@@ -32,6 +32,9 @@ fn main() {
 
     let f = read_username_from_file();
     println!("{:?}",f);
+
+    let f = read_username_from_file2();
+    println!("{:?}",f);
 }
 
 fn read_username_from_file()-> Result<String, io::Error>{
@@ -48,4 +51,12 @@ fn read_username_from_file()-> Result<String, io::Error>{
         Ok(_) => Ok(s),
         Err(e) => Err(e),
     }
+}
+
+fn read_username_from_file2()-> Result<String, io::Error>{
+    let mut s = String::new();
+
+    File::open("good.txt")?.read_to_string(&mut s)?;
+
+    Ok(s)
 }
