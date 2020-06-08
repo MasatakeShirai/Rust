@@ -8,8 +8,7 @@ fn main() {
     //v[99];
 
     let f = File::open("hello.txt");
-
-    let f = match f{
+    let _f = match f{
         Ok(file) => file,
         Err(ref error) if error.kind() == ErrorKind::NotFound => {
             match File::create("hello.txt"){
@@ -25,4 +24,7 @@ fn main() {
             panic!("There was a ploblem oping the file: {:?}",error)
         },
     };
+
+    //let _f = File::open("good.txt").unwrap();
+    let _f = File::open("good.txt").expect("Failed to open good.txt");
 }
